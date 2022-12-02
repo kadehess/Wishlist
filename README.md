@@ -10,9 +10,10 @@ This is a wishlist for items that one would like for their birthday or a special
 <li>As a user I want to be able to add photos to the items on my wishlist.</li>
 </ul>
 
-| `Gifts`   
-| ------------- |
-| id            |
-| rating        |
-| photo         |
-| has_many gift details |
+| `Gifts`   | `Gift Details` | `Wishlist` | `Profile` |
+| ------------- | ---- | ----- | ------ |
+| id            | id | id | id |
+| rating        | belongs_to gift | has_many gifts | name |
+| photo         | detail | belongs_to profile | username |
+| has_many gift details | | | passcode |
+| | | | photo |
