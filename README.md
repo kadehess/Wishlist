@@ -9,3 +9,10 @@ This is a wishlist for items that one would like for their birthday or a special
 <li>As a user I want to be able to add links to the items on my wishlist.</li>
 <li>As a user I want to be able to add photos to the items on my wishlist.</li>
 </ul>
+
+| `Gifts`   
+| ------------- |
+| id            |
+| rating        |
+| photo         |
+| has_many gift details |
