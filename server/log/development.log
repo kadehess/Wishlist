@@ -1,0 +1,486 @@
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (3.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (4.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateProfiles (20221205230040)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "profiles" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "username" varchar, "passcode" varchar, "image" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221205230040"]]
+  [1m[36mTRANSACTION (4.2ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateGiftDetails (20221205230704)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "gift_details" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "detail" varchar, "gift_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE INDEX "index_gift_details_on_gift_id" ON "gift_details" ("gift_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221205230704"]]
+  [1m[36mTRANSACTION (4.1ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateGifts (20221205230721)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "gifts" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "price" integer, "image" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221205230721"]]
+  [1m[36mTRANSACTION (4.8ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateRates (20221205230732)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "rates" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "rate" integer, "profile_id" integer, "gift_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_rates_on_profile_id" ON "rates" ("profile_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE INDEX "index_rates_on_gift_id" ON "rates" ("gift_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221205230732"]]
+  [1m[36mTRANSACTION (4.0ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateWishlists (20221205234023)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "wishlists" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "profile_id" integer, "gift_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE INDEX "index_wishlists_on_profile_id" ON "wishlists" ("profile_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_wishlists_on_gift_id" ON "wishlists" ("gift_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221205234023"]]
+  [1m[36mTRANSACTION (4.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-12-06 01:08:18.655280"], ["updated_at", "2022-12-06 01:08:18.655280"]]
+  [1m[36mTRANSACTION (3.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProfile Create (0.4ms)[0m  [1m[32mINSERT INTO "profiles" ("name", "username", "passcode", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Joe"], ["username", "joe123"], ["passcode", "pass123"], ["image", "https://play-lh.googleusercontent.com/VC7rta8PIK3MqmQG5c-F5CNJQ6cCv6Eb-kyBoUcQ2xj83dZVhn7YCj_GIWW8y7TnAMjU=w600-h300-pc0xffffff-pd"], ["created_at", "2022-12-06 01:09:11.538413"], ["updated_at", "2022-12-06 01:09:11.538413"]]
+  [1m[36mTRANSACTION (3.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProfile Create (0.2ms)[0m  [1m[32mINSERT INTO "profiles" ("name", "username", "passcode", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Sam"], ["username", "sam123"], ["passcode", "pass123"], ["image", "https://play-lh.googleusercontent.com/VC7rta8PIK3MqmQG5c-F5CNJQ6cCv6Eb-kyBoUcQ2xj83dZVhn7YCj_GIWW8y7TnAMjU=w600-h300-pc0xffffff-pd"], ["created_at", "2022-12-06 01:09:11.545087"], ["updated_at", "2022-12-06 01:09:11.545087"]]
+  [1m[36mTRANSACTION (3.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProfile Create (0.2ms)[0m  [1m[32mINSERT INTO "profiles" ("name", "username", "passcode", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Kate"], ["username", "kate123"], ["passcode", "pass123"], ["image", "https://play-lh.googleusercontent.com/VC7rta8PIK3MqmQG5c-F5CNJQ6cCv6Eb-kyBoUcQ2xj83dZVhn7YCj_GIWW8y7TnAMjU=w600-h300-pc0xffffff-pd"], ["created_at", "2022-12-06 01:09:11.551516"], ["updated_at", "2022-12-06 01:09:11.551516"]]
+  [1m[36mTRANSACTION (3.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGift Create (0.2ms)[0m  [1m[32mINSERT INTO "gifts" ("name", "price", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Iphone"], ["price", 700], ["image", "https://www.apple.com/v/iphone-14/c/images/overview/selfies/selfie_startframe__ex2suisayck2_large.jpg"], ["created_at", "2022-12-06 01:09:11.565523"], ["updated_at", "2022-12-06 01:09:11.565523"]]
+  [1m[36mTRANSACTION (2.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGift Create (0.2ms)[0m  [1m[32mINSERT INTO "gifts" ("name", "price", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Giftcard"], ["price", 25], ["image", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyXHwOwz3PMHxZSNH9wg2w1vAQjd4FicmB_1tR__glcxTxp4Z07iPOVwbqzkyr-6qTweA&usqp=CAU"], ["created_at", "2022-12-06 01:09:11.571706"], ["updated_at", "2022-12-06 01:09:11.571706"]]
+  [1m[36mTRANSACTION (3.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGift Create (0.2ms)[0m  [1m[32mINSERT INTO "gifts" ("name", "price", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Shoes"], ["price", 100], ["image", "https://cdn.shopify.com/s/files/1/2358/2817/products/air-jordan-4-retro-fire-red-2020-193982.png?v=1638813158"], ["created_at", "2022-12-06 01:09:11.578147"], ["updated_at", "2022-12-06 01:09:11.578147"]]
+  [1m[36mTRANSACTION (2.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGift Create (0.2ms)[0m  [1m[32mINSERT INTO "gifts" ("name", "price", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Woody"], ["price", 30], ["image", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBM4L6zad7w4E-1oCC_AwpB1Qlt8_u0-RePA&usqp=CAU"], ["created_at", "2022-12-06 01:09:11.584349"], ["updated_at", "2022-12-06 01:09:11.584349"]]
+  [1m[36mTRANSACTION (2.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGiftDetail Create (0.3ms)[0m  [1m[32mINSERT INTO "gift_details" ("detail", "gift_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["detail", "Iphone 14"], ["gift_id", 1], ["created_at", "2022-12-06 01:09:11.599626"], ["updated_at", "2022-12-06 01:09:11.599626"]]
+  [1m[36mTRANSACTION (5.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGiftDetail Create (0.3ms)[0m  [1m[32mINSERT INTO "gift_details" ("detail", "gift_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["detail", "Black"], ["gift_id", 1], ["created_at", "2022-12-06 01:09:11.609428"], ["updated_at", "2022-12-06 01:09:11.609428"]]
+  [1m[36mTRANSACTION (4.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGiftDetail Create (0.4ms)[0m  [1m[32mINSERT INTO "gift_details" ("detail", "gift_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["detail", "128 GB"], ["gift_id", 1], ["created_at", "2022-12-06 01:09:11.618593"], ["updated_at", "2022-12-06 01:09:11.618593"]]
+  [1m[36mTRANSACTION (3.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGiftDetail Create (0.3ms)[0m  [1m[32mINSERT INTO "gift_details" ("detail", "gift_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["detail", "Walmart Gift Card"], ["gift_id", 2], ["created_at", "2022-12-06 01:09:11.627861"], ["updated_at", "2022-12-06 01:09:11.627861"]]
+  [1m[36mTRANSACTION (3.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGiftDetail Create (0.4ms)[0m  [1m[32mINSERT INTO "gift_details" ("detail", "gift_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["detail", "Red"], ["gift_id", 2], ["created_at", "2022-12-06 01:09:11.636129"], ["updated_at", "2022-12-06 01:09:11.636129"]]
+  [1m[36mTRANSACTION (3.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGiftDetail Create (0.2ms)[0m  [1m[32mINSERT INTO "gift_details" ("detail", "gift_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["detail", "Size 10"], ["gift_id", 3], ["created_at", "2022-12-06 01:09:11.644681"], ["updated_at", "2022-12-06 01:09:11.644681"]]
+  [1m[36mTRANSACTION (3.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGiftDetail Create (0.3ms)[0m  [1m[32mINSERT INTO "gift_details" ("detail", "gift_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["detail", "Air Jordans Retro"], ["gift_id", 3], ["created_at", "2022-12-06 01:09:11.652241"], ["updated_at", "2022-12-06 01:09:11.652241"]]
+  [1m[36mTRANSACTION (3.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGiftDetail Create (0.2ms)[0m  [1m[32mINSERT INTO "gift_details" ("detail", "gift_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["detail", "Red"], ["gift_id", 3], ["created_at", "2022-12-06 01:09:11.660336"], ["updated_at", "2022-12-06 01:09:11.660336"]]
+  [1m[36mTRANSACTION (3.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGiftDetail Create (0.2ms)[0m  [1m[32mINSERT INTO "gift_details" ("detail", "gift_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["detail", "Toy"], ["gift_id", 4], ["created_at", "2022-12-06 01:09:11.670514"], ["updated_at", "2022-12-06 01:09:11.670514"]]
+  [1m[36mTRANSACTION (2.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGiftDetail Create (0.2ms)[0m  [1m[32mINSERT INTO "gift_details" ("detail", "gift_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["detail", "Small"], ["gift_id", 4], ["created_at", "2022-12-06 01:09:11.676673"], ["updated_at", "2022-12-06 01:09:11.676673"]]
+  [1m[36mTRANSACTION (2.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRate Create (0.3ms)[0m  [1m[32mINSERT INTO "rates" ("rate", "profile_id", "gift_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["rate", 4], ["profile_id", 1], ["gift_id", 1], ["created_at", "2022-12-06 01:09:11.689668"], ["updated_at", "2022-12-06 01:09:11.689668"]]
+  [1m[36mTRANSACTION (3.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRate Create (0.3ms)[0m  [1m[32mINSERT INTO "rates" ("rate", "profile_id", "gift_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["rate", 3], ["profile_id", 1], ["gift_id", 4], ["created_at", "2022-12-06 01:09:11.696821"], ["updated_at", "2022-12-06 01:09:11.696821"]]
+  [1m[36mTRANSACTION (3.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRate Create (0.2ms)[0m  [1m[32mINSERT INTO "rates" ("rate", "profile_id", "gift_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["rate", 5], ["profile_id", 2], ["gift_id", 2], ["created_at", "2022-12-06 01:09:11.703441"], ["updated_at", "2022-12-06 01:09:11.703441"]]
+  [1m[36mTRANSACTION (3.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRate Create (0.2ms)[0m  [1m[32mINSERT INTO "rates" ("rate", "profile_id", "gift_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["rate", 2], ["profile_id", 2], ["gift_id", 3], ["created_at", "2022-12-06 01:09:11.710299"], ["updated_at", "2022-12-06 01:09:11.710299"]]
+  [1m[36mTRANSACTION (3.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRate Create (0.3ms)[0m  [1m[32mINSERT INTO "rates" ("rate", "profile_id", "gift_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["rate", 4], ["profile_id", 3], ["gift_id", 3], ["created_at", "2022-12-06 01:09:11.716783"], ["updated_at", "2022-12-06 01:09:11.716783"]]
+  [1m[36mTRANSACTION (3.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProfile Create (0.2ms)[0m  [1m[32mINSERT INTO "profiles" ("name", "username", "passcode", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Joe"], ["username", "joe123"], ["passcode", "pass123"], ["image", "https://play-lh.googleusercontent.com/VC7rta8PIK3MqmQG5c-F5CNJQ6cCv6Eb-kyBoUcQ2xj83dZVhn7YCj_GIWW8y7TnAMjU=w600-h300-pc0xffffff-pd"], ["created_at", "2022-12-06 01:09:48.606845"], ["updated_at", "2022-12-06 01:09:48.606845"]]
+  [1m[36mTRANSACTION (4.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProfile Create (0.3ms)[0m  [1m[32mINSERT INTO "profiles" ("name", "username", "passcode", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Sam"], ["username", "sam123"], ["passcode", "pass123"], ["image", "https://play-lh.googleusercontent.com/VC7rta8PIK3MqmQG5c-F5CNJQ6cCv6Eb-kyBoUcQ2xj83dZVhn7YCj_GIWW8y7TnAMjU=w600-h300-pc0xffffff-pd"], ["created_at", "2022-12-06 01:09:48.614741"], ["updated_at", "2022-12-06 01:09:48.614741"]]
+  [1m[36mTRANSACTION (3.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProfile Create (0.2ms)[0m  [1m[32mINSERT INTO "profiles" ("name", "username", "passcode", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Kate"], ["username", "kate123"], ["passcode", "pass123"], ["image", "https://play-lh.googleusercontent.com/VC7rta8PIK3MqmQG5c-F5CNJQ6cCv6Eb-kyBoUcQ2xj83dZVhn7YCj_GIWW8y7TnAMjU=w600-h300-pc0xffffff-pd"], ["created_at", "2022-12-06 01:09:48.621676"], ["updated_at", "2022-12-06 01:09:48.621676"]]
+  [1m[36mTRANSACTION (2.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGift Create (0.3ms)[0m  [1m[32mINSERT INTO "gifts" ("name", "price", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Iphone"], ["price", 700], ["image", "https://www.apple.com/v/iphone-14/c/images/overview/selfies/selfie_startframe__ex2suisayck2_large.jpg"], ["created_at", "2022-12-06 01:09:48.635109"], ["updated_at", "2022-12-06 01:09:48.635109"]]
+  [1m[36mTRANSACTION (3.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGift Create (0.3ms)[0m  [1m[32mINSERT INTO "gifts" ("name", "price", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Giftcard"], ["price", 25], ["image", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyXHwOwz3PMHxZSNH9wg2w1vAQjd4FicmB_1tR__glcxTxp4Z07iPOVwbqzkyr-6qTweA&usqp=CAU"], ["created_at", "2022-12-06 01:09:48.641833"], ["updated_at", "2022-12-06 01:09:48.641833"]]
+  [1m[36mTRANSACTION (3.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGift Create (0.2ms)[0m  [1m[32mINSERT INTO "gifts" ("name", "price", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Shoes"], ["price", 100], ["image", "https://cdn.shopify.com/s/files/1/2358/2817/products/air-jordan-4-retro-fire-red-2020-193982.png?v=1638813158"], ["created_at", "2022-12-06 01:09:48.648981"], ["updated_at", "2022-12-06 01:09:48.648981"]]
+  [1m[36mTRANSACTION (2.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGift Create (0.2ms)[0m  [1m[32mINSERT INTO "gifts" ("name", "price", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Woody"], ["price", 30], ["image", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBM4L6zad7w4E-1oCC_AwpB1Qlt8_u0-RePA&usqp=CAU"], ["created_at", "2022-12-06 01:09:48.655324"], ["updated_at", "2022-12-06 01:09:48.655324"]]
+  [1m[36mTRANSACTION (2.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGiftDetail Create (0.2ms)[0m  [1m[32mINSERT INTO "gift_details" ("detail", "gift_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["detail", "Iphone 14"], ["gift_id", 5], ["created_at", "2022-12-06 01:09:48.669464"], ["updated_at", "2022-12-06 01:09:48.669464"]]
+  [1m[36mTRANSACTION (3.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGiftDetail Create (0.2ms)[0m  [1m[32mINSERT INTO "gift_details" ("detail", "gift_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["detail", "Black"], ["gift_id", 5], ["created_at", "2022-12-06 01:09:48.676103"], ["updated_at", "2022-12-06 01:09:48.676103"]]
+  [1m[36mTRANSACTION (3.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGiftDetail Create (0.2ms)[0m  [1m[32mINSERT INTO "gift_details" ("detail", "gift_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["detail", "128 GB"], ["gift_id", 5], ["created_at", "2022-12-06 01:09:48.682664"], ["updated_at", "2022-12-06 01:09:48.682664"]]
+  [1m[36mTRANSACTION (3.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGiftDetail Create (0.2ms)[0m  [1m[32mINSERT INTO "gift_details" ("detail", "gift_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["detail", "Walmart Gift Card"], ["gift_id", 6], ["created_at", "2022-12-06 01:09:48.689970"], ["updated_at", "2022-12-06 01:09:48.689970"]]
+  [1m[36mTRANSACTION (2.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGiftDetail Create (0.2ms)[0m  [1m[32mINSERT INTO "gift_details" ("detail", "gift_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["detail", "Red"], ["gift_id", 6], ["created_at", "2022-12-06 01:09:48.697370"], ["updated_at", "2022-12-06 01:09:48.697370"]]
+  [1m[36mTRANSACTION (3.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGiftDetail Create (0.3ms)[0m  [1m[32mINSERT INTO "gift_details" ("detail", "gift_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["detail", "Size 10"], ["gift_id", 7], ["created_at", "2022-12-06 01:09:48.703391"], ["updated_at", "2022-12-06 01:09:48.703391"]]
+  [1m[36mTRANSACTION (2.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGiftDetail Create (0.2ms)[0m  [1m[32mINSERT INTO "gift_details" ("detail", "gift_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["detail", "Air Jordans Retro"], ["gift_id", 7], ["created_at", "2022-12-06 01:09:48.709679"], ["updated_at", "2022-12-06 01:09:48.709679"]]
+  [1m[36mTRANSACTION (3.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGiftDetail Create (0.2ms)[0m  [1m[32mINSERT INTO "gift_details" ("detail", "gift_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["detail", "Red"], ["gift_id", 7], ["created_at", "2022-12-06 01:09:48.717050"], ["updated_at", "2022-12-06 01:09:48.717050"]]
+  [1m[36mTRANSACTION (3.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGiftDetail Create (0.2ms)[0m  [1m[32mINSERT INTO "gift_details" ("detail", "gift_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["detail", "Toy"], ["gift_id", 8], ["created_at", "2022-12-06 01:09:48.726910"], ["updated_at", "2022-12-06 01:09:48.726910"]]
+  [1m[36mTRANSACTION (2.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGiftDetail Create (0.2ms)[0m  [1m[32mINSERT INTO "gift_details" ("detail", "gift_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["detail", "Small"], ["gift_id", 8], ["created_at", "2022-12-06 01:09:48.732814"], ["updated_at", "2022-12-06 01:09:48.732814"]]
+  [1m[36mTRANSACTION (3.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRate Create (0.3ms)[0m  [1m[32mINSERT INTO "rates" ("rate", "profile_id", "gift_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["rate", 4], ["profile_id", 4], ["gift_id", 5], ["created_at", "2022-12-06 01:09:48.746308"], ["updated_at", "2022-12-06 01:09:48.746308"]]
+  [1m[36mTRANSACTION (3.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRate Create (0.2ms)[0m  [1m[32mINSERT INTO "rates" ("rate", "profile_id", "gift_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["rate", 3], ["profile_id", 4], ["gift_id", 8], ["created_at", "2022-12-06 01:09:48.753771"], ["updated_at", "2022-12-06 01:09:48.753771"]]
+  [1m[36mTRANSACTION (2.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRate Create (0.2ms)[0m  [1m[32mINSERT INTO "rates" ("rate", "profile_id", "gift_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["rate", 5], ["profile_id", 5], ["gift_id", 6], ["created_at", "2022-12-06 01:09:48.760161"], ["updated_at", "2022-12-06 01:09:48.760161"]]
+  [1m[36mTRANSACTION (2.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRate Create (0.3ms)[0m  [1m[32mINSERT INTO "rates" ("rate", "profile_id", "gift_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["rate", 2], ["profile_id", 5], ["gift_id", 7], ["created_at", "2022-12-06 01:09:48.766941"], ["updated_at", "2022-12-06 01:09:48.766941"]]
+  [1m[36mTRANSACTION (3.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRate Create (0.2ms)[0m  [1m[32mINSERT INTO "rates" ("rate", "profile_id", "gift_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["rate", 4], ["profile_id", 6], ["gift_id", 7], ["created_at", "2022-12-06 01:09:48.774078"], ["updated_at", "2022-12-06 01:09:48.774078"]]
+  [1m[36mTRANSACTION (3.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWishlist Create (0.3ms)[0m  [1m[32mINSERT INTO "wishlists" ("profile_id", "gift_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["profile_id", 4], ["gift_id", 5], ["created_at", "2022-12-06 01:09:48.788325"], ["updated_at", "2022-12-06 01:09:48.788325"]]
+  [1m[36mTRANSACTION (3.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWishlist Create (0.2ms)[0m  [1m[32mINSERT INTO "wishlists" ("profile_id", "gift_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["profile_id", 4], ["gift_id", 8], ["created_at", "2022-12-06 01:09:48.796210"], ["updated_at", "2022-12-06 01:09:48.796210"]]
+  [1m[36mTRANSACTION (3.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (3.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (3.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateProfiles (20221205230040)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "profiles" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "username" varchar, "passcode" varchar, "image" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221205230040"]]
+  [1m[36mTRANSACTION (3.9ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateGiftDetails (20221205230704)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "gift_details" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "detail" varchar, "gift_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_gift_details_on_gift_id" ON "gift_details" ("gift_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221205230704"]]
+  [1m[36mTRANSACTION (4.5ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateGifts (20221205230721)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "gifts" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "price" integer, "image" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221205230721"]]
+  [1m[36mTRANSACTION (4.2ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateRates (20221205230732)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "rates" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "rate" integer, "profile_id" integer, "gift_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE INDEX "index_rates_on_profile_id" ON "rates" ("profile_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_rates_on_gift_id" ON "rates" ("gift_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221205230732"]]
+  [1m[36mTRANSACTION (4.2ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateWishlists (20221205234023)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "wishlists" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "profile_id" integer, "gift_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_wishlists_on_profile_id" ON "wishlists" ("profile_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_wishlists_on_gift_id" ON "wishlists" ("gift_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221205234023"]]
+  [1m[36mTRANSACTION (4.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-12-06 01:10:28.467473"], ["updated_at", "2022-12-06 01:10:28.467473"]]
+  [1m[36mTRANSACTION (3.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProfile Create (0.3ms)[0m  [1m[32mINSERT INTO "profiles" ("name", "username", "passcode", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Joe"], ["username", "joe123"], ["passcode", "pass123"], ["image", "https://play-lh.googleusercontent.com/VC7rta8PIK3MqmQG5c-F5CNJQ6cCv6Eb-kyBoUcQ2xj83dZVhn7YCj_GIWW8y7TnAMjU=w600-h300-pc0xffffff-pd"], ["created_at", "2022-12-06 01:10:38.724161"], ["updated_at", "2022-12-06 01:10:38.724161"]]
+  [1m[36mTRANSACTION (2.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProfile Create (0.2ms)[0m  [1m[32mINSERT INTO "profiles" ("name", "username", "passcode", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Sam"], ["username", "sam123"], ["passcode", "pass123"], ["image", "https://play-lh.googleusercontent.com/VC7rta8PIK3MqmQG5c-F5CNJQ6cCv6Eb-kyBoUcQ2xj83dZVhn7YCj_GIWW8y7TnAMjU=w600-h300-pc0xffffff-pd"], ["created_at", "2022-12-06 01:10:38.730764"], ["updated_at", "2022-12-06 01:10:38.730764"]]
+  [1m[36mTRANSACTION (3.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProfile Create (0.2ms)[0m  [1m[32mINSERT INTO "profiles" ("name", "username", "passcode", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Kate"], ["username", "kate123"], ["passcode", "pass123"], ["image", "https://play-lh.googleusercontent.com/VC7rta8PIK3MqmQG5c-F5CNJQ6cCv6Eb-kyBoUcQ2xj83dZVhn7YCj_GIWW8y7TnAMjU=w600-h300-pc0xffffff-pd"], ["created_at", "2022-12-06 01:10:38.737453"], ["updated_at", "2022-12-06 01:10:38.737453"]]
+  [1m[36mTRANSACTION (2.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGift Create (0.2ms)[0m  [1m[32mINSERT INTO "gifts" ("name", "price", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Iphone"], ["price", 700], ["image", "https://www.apple.com/v/iphone-14/c/images/overview/selfies/selfie_startframe__ex2suisayck2_large.jpg"], ["created_at", "2022-12-06 01:10:38.751118"], ["updated_at", "2022-12-06 01:10:38.751118"]]
+  [1m[36mTRANSACTION (3.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGift Create (0.6ms)[0m  [1m[32mINSERT INTO "gifts" ("name", "price", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Giftcard"], ["price", 25], ["image", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyXHwOwz3PMHxZSNH9wg2w1vAQjd4FicmB_1tR__glcxTxp4Z07iPOVwbqzkyr-6qTweA&usqp=CAU"], ["created_at", "2022-12-06 01:10:38.758394"], ["updated_at", "2022-12-06 01:10:38.758394"]]
+  [1m[36mTRANSACTION (3.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGift Create (0.2ms)[0m  [1m[32mINSERT INTO "gifts" ("name", "price", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Shoes"], ["price", 100], ["image", "https://cdn.shopify.com/s/files/1/2358/2817/products/air-jordan-4-retro-fire-red-2020-193982.png?v=1638813158"], ["created_at", "2022-12-06 01:10:38.765882"], ["updated_at", "2022-12-06 01:10:38.765882"]]
+  [1m[36mTRANSACTION (3.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGift Create (0.2ms)[0m  [1m[32mINSERT INTO "gifts" ("name", "price", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Woody"], ["price", 30], ["image", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBM4L6zad7w4E-1oCC_AwpB1Qlt8_u0-RePA&usqp=CAU"], ["created_at", "2022-12-06 01:10:38.772706"], ["updated_at", "2022-12-06 01:10:38.772706"]]
+  [1m[36mTRANSACTION (3.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGiftDetail Create (0.2ms)[0m  [1m[32mINSERT INTO "gift_details" ("detail", "gift_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["detail", "Iphone 14"], ["gift_id", 1], ["created_at", "2022-12-06 01:10:38.788270"], ["updated_at", "2022-12-06 01:10:38.788270"]]
+  [1m[36mTRANSACTION (2.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGiftDetail Create (0.2ms)[0m  [1m[32mINSERT INTO "gift_details" ("detail", "gift_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["detail", "Black"], ["gift_id", 1], ["created_at", "2022-12-06 01:10:38.794407"], ["updated_at", "2022-12-06 01:10:38.794407"]]
+  [1m[36mTRANSACTION (3.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGiftDetail Create (0.2ms)[0m  [1m[32mINSERT INTO "gift_details" ("detail", "gift_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["detail", "128 GB"], ["gift_id", 1], ["created_at", "2022-12-06 01:10:38.800733"], ["updated_at", "2022-12-06 01:10:38.800733"]]
+  [1m[36mTRANSACTION (3.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGiftDetail Create (0.2ms)[0m  [1m[32mINSERT INTO "gift_details" ("detail", "gift_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["detail", "Walmart Gift Card"], ["gift_id", 2], ["created_at", "2022-12-06 01:10:38.808213"], ["updated_at", "2022-12-06 01:10:38.808213"]]
+  [1m[36mTRANSACTION (3.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGiftDetail Create (0.2ms)[0m  [1m[32mINSERT INTO "gift_details" ("detail", "gift_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["detail", "Red"], ["gift_id", 2], ["created_at", "2022-12-06 01:10:38.815775"], ["updated_at", "2022-12-06 01:10:38.815775"]]
+  [1m[36mTRANSACTION (2.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGiftDetail Create (0.2ms)[0m  [1m[32mINSERT INTO "gift_details" ("detail", "gift_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["detail", "Size 10"], ["gift_id", 3], ["created_at", "2022-12-06 01:10:38.822336"], ["updated_at", "2022-12-06 01:10:38.822336"]]
+  [1m[36mTRANSACTION (2.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGiftDetail Create (0.2ms)[0m  [1m[32mINSERT INTO "gift_details" ("detail", "gift_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["detail", "Air Jordans Retro"], ["gift_id", 3], ["created_at", "2022-12-06 01:10:38.831448"], ["updated_at", "2022-12-06 01:10:38.831448"]]
+  [1m[36mTRANSACTION (3.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGiftDetail Create (0.2ms)[0m  [1m[32mINSERT INTO "gift_details" ("detail", "gift_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["detail", "Red"], ["gift_id", 3], ["created_at", "2022-12-06 01:10:38.838033"], ["updated_at", "2022-12-06 01:10:38.838033"]]
+  [1m[36mTRANSACTION (3.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGiftDetail Create (0.2ms)[0m  [1m[32mINSERT INTO "gift_details" ("detail", "gift_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["detail", "Toy"], ["gift_id", 4], ["created_at", "2022-12-06 01:10:38.844803"], ["updated_at", "2022-12-06 01:10:38.844803"]]
+  [1m[36mTRANSACTION (2.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGiftDetail Create (0.2ms)[0m  [1m[32mINSERT INTO "gift_details" ("detail", "gift_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["detail", "Small"], ["gift_id", 4], ["created_at", "2022-12-06 01:10:38.850899"], ["updated_at", "2022-12-06 01:10:38.850899"]]
+  [1m[36mTRANSACTION (3.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRate Create (0.3ms)[0m  [1m[32mINSERT INTO "rates" ("rate", "profile_id", "gift_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["rate", 4], ["profile_id", 1], ["gift_id", 1], ["created_at", "2022-12-06 01:10:38.863387"], ["updated_at", "2022-12-06 01:10:38.863387"]]
+  [1m[36mTRANSACTION (3.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRate Create (0.3ms)[0m  [1m[32mINSERT INTO "rates" ("rate", "profile_id", "gift_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["rate", 3], ["profile_id", 1], ["gift_id", 4], ["created_at", "2022-12-06 01:10:38.870607"], ["updated_at", "2022-12-06 01:10:38.870607"]]
+  [1m[36mTRANSACTION (3.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRate Create (0.3ms)[0m  [1m[32mINSERT INTO "rates" ("rate", "profile_id", "gift_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["rate", 5], ["profile_id", 2], ["gift_id", 2], ["created_at", "2022-12-06 01:10:38.878257"], ["updated_at", "2022-12-06 01:10:38.878257"]]
+  [1m[36mTRANSACTION (3.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRate Create (0.2ms)[0m  [1m[32mINSERT INTO "rates" ("rate", "profile_id", "gift_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["rate", 2], ["profile_id", 2], ["gift_id", 3], ["created_at", "2022-12-06 01:10:38.885288"], ["updated_at", "2022-12-06 01:10:38.885288"]]
+  [1m[36mTRANSACTION (4.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRate Create (0.2ms)[0m  [1m[32mINSERT INTO "rates" ("rate", "profile_id", "gift_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["rate", 4], ["profile_id", 3], ["gift_id", 3], ["created_at", "2022-12-06 01:10:38.893564"], ["updated_at", "2022-12-06 01:10:38.893564"]]
+  [1m[36mTRANSACTION (2.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWishlist Create (0.3ms)[0m  [1m[32mINSERT INTO "wishlists" ("profile_id", "gift_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["profile_id", 1], ["gift_id", 1], ["created_at", "2022-12-06 01:10:38.906743"], ["updated_at", "2022-12-06 01:10:38.906743"]]
+  [1m[36mTRANSACTION (3.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWishlist Create (0.2ms)[0m  [1m[32mINSERT INTO "wishlists" ("profile_id", "gift_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["profile_id", 1], ["gift_id", 4], ["created_at", "2022-12-06 01:10:38.913432"], ["updated_at", "2022-12-06 01:10:38.913432"]]
+  [1m[36mTRANSACTION (3.0ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/" for ::1 at 2022-12-05 18:50:01 -0700
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/share/rvm/gems/ruby-2.7.4/gems/railties-6.1.7/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/share/rvm/gems/ruby-2.7.4/gems/railties-6.1.7/lib/rails/templates/rails/welcome/index.html.erb (Duration: 4.1ms | Allocations: 341)
+Completed 200 OK in 8ms (Views: 6.2ms | ActiveRecord: 0.0ms | Allocations: 1807)
+
+
+Started GET "/favicon.ico" for ::1 at 2022-12-05 18:50:01 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/profiles" for ::1 at 2022-12-05 18:50:15 -0700
+  
+AbstractController::ActionNotFound (The action 'index' could not be found for ProfilesController
+Did you mean?  destroy
+               show):
+  
+actionpack (6.1.7) lib/abstract_controller/base.rb:160:in `process'
+actionpack (6.1.7) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.1.7) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.1.7) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.1.7) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.1.7) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (6.1.7) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.1.7) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.1.7) lib/action_dispatch/routing/route_set.rb:842:in `call'
+rack (2.2.4) lib/rack/etag.rb:27:in `call'
+rack (2.2.4) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.4) lib/rack/head.rb:12:in `call'
+activerecord (6.1.7) lib/active_record/migration.rb:601:in `call'
+actionpack (6.1.7) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.7) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.7) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.7) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.7) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+actionpack (6.1.7) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.7) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.7) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.7) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.7) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.7) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.7) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.1.7) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.7) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.4) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.7) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.7) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.4) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.7) lib/action_dispatch/middleware/host_authorization.rb:148:in `call'
+railties (6.1.7) lib/rails/engine.rb:539:in `call'
+puma (5.6.5) lib/puma/configuration.rb:252:in `call'
+puma (5.6.5) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.5) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.5) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.5) lib/puma/server.rb:443:in `process_client'
+puma (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/profiles/1" for ::1 at 2022-12-05 18:50:36 -0700
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 146)
+
+
+  
+SyntaxError (/home/joefeet/Development/code/phase-4/Wishlist/server/app/models/profile.rb:2: syntax error, unexpected ':'
+...  has_many :rates, dependent: : destroy
+...                              ^
+/home/joefeet/Development/code/phase-4/Wishlist/server/app/models/profile.rb:3: syntax error, unexpected ':'
+...s_many :wishlists, dependent: : destroy 
+...                              ^
+):
+  
+app/models/profile.rb:2: syntax error, unexpected ':'
+app/models/profile.rb:3: syntax error, unexpected ':'
+app/models/profile.rb:2: syntax error, unexpected ':'
+app/models/profile.rb:3: syntax error, unexpected ':'
+app/controllers/profiles_controller.rb:4:in `show'
+Started GET "/profiles/1" for ::1 at 2022-12-05 18:51:41 -0700
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/profiles_controller.rb:4:in `show'
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:4:in `show'
+[active_model_serializers] Rendered ProfileWithWishlistSerializer with ActiveModelSerializers::Adapter::Attributes (4.2ms)
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 1.0ms | Allocations: 13730)
+
+
+  
+NoMethodError (undefined method `photo' for #<Profile:0x00007f15f8830f58>):
+  
+app/controllers/profiles_controller.rb:5:in `show'
+Started GET "/profiles/1" for ::1 at 2022-12-05 18:52:28 -0700
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/profiles_controller.rb:4:in `show'
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:4:in `show'
+[active_model_serializers]   [1m[36mWishlist Load (0.1ms)[0m  [1m[34mSELECT "wishlists".* FROM "wishlists" WHERE "wishlists"."profile_id" = ?[0m  [["profile_id", 1]]
+[active_model_serializers]   ↳ app/controllers/profiles_controller.rb:5:in `show'
+[active_model_serializers] No serializer found for resource: #<Wishlist id: 1, profile_id: 1, gift_id: 1, created_at: "2022-12-06 01:10:38.906743000 +0000", updated_at: "2022-12-06 01:10:38.906743000 +0000">
+[active_model_serializers] Rendered ProfileWithWishlistSerializer with ActiveModelSerializers::Adapter::Attributes (17.7ms)
+Completed 200 OK in 28ms (Views: 17.6ms | ActiveRecord: 1.2ms | Allocations: 14513)
+
+
+Started GET "/gifts" for ::1 at 2022-12-05 18:53:49 -0700
+Processing by GiftsController#index as HTML
+  [1m[36mGift Load (0.1ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts"[0m
+  ↳ app/controllers/gifts_controller.rb:4:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (4.44ms)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.4ms | Allocations: 9266)
+
+
+  
+NoMethodError (undefined method `details' for #<Gift:0x00007f15f85c7f78>):
+  
+app/controllers/gifts_controller.rb:4:in `index'
+Started GET "/gifts" for ::1 at 2022-12-05 18:54:36 -0700
+Processing by GiftsController#index as HTML
+Completed 500 Internal Server Error in 5ms (Allocations: 4431)
+
+
+  
+NameError (undefined local variable or method `gifts' for #<GiftsController:0x000000000083b8>
+Did you mean?  gift):
+  
+app/controllers/gifts_controller.rb:4:in `index'
+Started GET "/gifts" for ::1 at 2022-12-05 18:55:03 -0700
+Processing by GiftsController#index as HTML
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/gifts_controller.rb:4:in `index'
+  [1m[36mGift Load (0.1ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts"[0m
+  ↳ app/controllers/gifts_controller.rb:4:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (4.42ms)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.7ms | Allocations: 10055)
+
+
+  
+NoMethodError (undefined method `details' for #<Gift:0x00007f15f89d4148>):
+  
+app/controllers/gifts_controller.rb:4:in `index'
+Started GET "/gifts" for ::1 at 2022-12-05 18:55:44 -0700
+Processing by GiftsController#index as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/gifts_controller.rb:4:in `index'
+  [1m[36mGift Load (0.1ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts"[0m
+  ↳ app/controllers/gifts_controller.rb:4:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (4.34ms)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 1.0ms | Allocations: 10106)
+
+
+  
+NoMethodError (undefined method `photo' for #<Gift:0x000055a3cad40120>):
+  
+app/controllers/gifts_controller.rb:4:in `index'
+Started GET "/gifts" for ::1 at 2022-12-05 18:56:29 -0700
+Processing by GiftsController#index as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/gifts_controller.rb:4:in `index'
+  [1m[36mGift Load (0.1ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts"[0m
+  ↳ app/controllers/gifts_controller.rb:4:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.51ms)
+Completed 200 OK in 11ms (Views: 7.1ms | ActiveRecord: 0.7ms | Allocations: 7345)
+
+
+Started GET "/gifts" for ::1 at 2022-12-05 20:05:21 -0700
+Processing by GiftsController#index as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/gifts_controller.rb:4:in `index'
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts"[0m
+  ↳ app/controllers/gifts_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mRate Load (0.3ms)[0m  [1m[34mSELECT "rates".* FROM "rates" WHERE "rates"."gift_id" = ?[0m  [["gift_id", 1]]
+[active_model_serializers]   ↳ app/controllers/gifts_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mRate Load (0.1ms)[0m  [1m[34mSELECT "rates".* FROM "rates" WHERE "rates"."gift_id" = ?[0m  [["gift_id", 2]]
+[active_model_serializers]   ↳ app/controllers/gifts_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mRate Load (0.0ms)[0m  [1m[34mSELECT "rates".* FROM "rates" WHERE "rates"."gift_id" = ?[0m  [["gift_id", 3]]
+[active_model_serializers]   ↳ app/controllers/gifts_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mRate Load (0.1ms)[0m  [1m[34mSELECT "rates".* FROM "rates" WHERE "rates"."gift_id" = ?[0m  [["gift_id", 4]]
+[active_model_serializers]   ↳ app/controllers/gifts_controller.rb:4:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (19.28ms)
+Completed 200 OK in 36ms (Views: 31.1ms | ActiveRecord: 2.3ms | Allocations: 14784)
+
+
