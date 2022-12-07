@@ -1,0 +1,3 @@
+class GiftDetailsController < ApplicationController
+    
+end
