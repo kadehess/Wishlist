@@ -1,8 +1,38 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 
-function CreateLoginCard(){
-    return(<div>
+function CreateLoginCard({setProfile, setUsername, username, setPassword, password, handleUsername, handlePassword, loggedin, setLoggedin, profiles}){
+    console.log(profiles)
+    function handleSubmit(e){
+        e.preventDefault()
+        profiles.map(profile => {
+            if (profile.username == username){
+                if (profile.passcode == password){
+                    setProfile(profile)
+                    setUsername('')
+                    setPassword('')
+                    setLoggedin(true)
+                }
+            }
+        })
+    }
 
+    return(
+    <div className='Login-card-div'>
+        <form className='Login-card-form'onSubmit={handleSubmit}>
+            <div>
+                <label>Username:</label>
+                <input type="text" name="uname" value={username} onChange={handleUsername} />
+            </div>
+            <div>
+                <label>Password:</label>
+                <input type="password" name="pass" value={password} onChange={handlePassword} />
+            </div>
+            <div>
+                <input className='button' type="submit" />
+            </div>
+        </form>
+        
+        
     </div>
     )
 
