@@ -30,6 +30,7 @@ function App() {
         <Route exact path = "/login"
         element={<RenderLoginPage
         setProfile={setProfile}
+        profile={profile}
         setUsername={setUsername}
         username={username}
         setPassword={setPassword}

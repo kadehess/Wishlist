@@ -1,9 +1,10 @@
 import React, {useState} from "react";
 import CreateLoginCard from "./LoginCard";
 import CreateProfileCard from "./NewProfileCard";
+import ProfileCard from "./ProfileCard";
 import { useNavigate } from "react-router-dom";
 
-function RenderLoginPage({setProfile, setUsername, username, setPassword, password, setProfimg, profimg, setProfiles, profiles, setLoggedin, loggedin, name, setName }){
+function RenderLoginPage({setProfile, setUsername, username, setPassword, password, setProfimg, profimg, setProfiles, profiles, setLoggedin, loggedin, name, setName, profile }){
     const navigate = useNavigate()
     const [display, setDisplay] = useState("none")
     function handleDisplay(){
@@ -46,11 +47,12 @@ function RenderLoginPage({setProfile, setUsername, username, setPassword, passwo
    
 
     return(
-        <div className='Login-page-div'>
+    <div className='Login-page-div'>
         {loggedin ? <button className='button'onClick={logOut}>Log Out</button> : <button className='button' onClick={handleLogIn}>Log In</button>}
         <button className='button' onClick={handleNewProfile}>Create Account</button>
         {loggedin ? null : handleDisplay()}
         {loggedin ? <p>Logged in Successfully!</p> : <p>Not Logged In</p>}
+        <div className="Home-user-div">{loggedin ? <ProfileCard profile={profile} setProfile={setProfile} password={password} setPassword={setPassword} setLoggedin={setLoggedin} profiles={profiles} setProfiles={setProfiles} /> : null}</div>
     </div>
     )
 
