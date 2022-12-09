@@ -3,6 +3,8 @@ import {Routes, Route} from "react-router-dom";
 import RenderHomePage from "./components/HomePage";
 import RenderLoginPage from "./components/LoginPage";
 import './App.css';
+import NavBar from './NavBar'
+import GiftContainer from './components/GiftContainer'
 
 function App() {
   const [profile, setProfile] = useState({})
@@ -18,7 +20,7 @@ function App() {
   //     .then(r => r.json())
   //     .then(setProfiles)
   // }, [])
-
+const [gift, setAllGifts] = useState([]);
   useEffect(() => { 
     fetch("http://localhost:3000/auth")
     .then(res => {
@@ -38,13 +40,19 @@ function App() {
       
 }
 
-
+  useEffect(() => {
+    fetch("http://localhost:3000/gifts")
+      .then((res) => res.json())
+      .then((data) => setAllGifts(data));
+  }, []);
 
   return (
     <div className="App">
+      <NavBar/>
       <Routes>
         <Route exact path = "/"
-        element={<RenderHomePage />}
+        element={<RenderHomePage 
+        />}
         />
         <Route exact path = "/login"
         element={<RenderLoginPage
@@ -68,7 +76,6 @@ function App() {
         />
 
       </Routes>
-
     </div>
   );
 }
