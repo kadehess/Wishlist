@@ -18882,3 +18882,509 @@ Processing by ProfilesController#show as HTML
 Completed 200 OK in 26ms (Views: 15.7ms | ActiveRecord: 1.4ms | Allocations: 16426)
 
 
+Started GET "/profiles" for ::1 at 2022-12-07 14:16:39 -0800
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProfilesController#index as */*
+  [1m[36mProfile Load (4.2ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  ↳ app/controllers/profiles_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.41ms)
+Completed 200 OK in 20ms (Views: 7.4ms | ActiveRecord: 4.4ms | Allocations: 12152)
+
+
+Started GET "/profiles" for ::1 at 2022-12-07 14:20:25 -0800
+Processing by ProfilesController#index as */*
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  ↳ app/controllers/profiles_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.57ms)
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.2ms | Allocations: 1116)
+
+
+Started GET "/profiles" for ::1 at 2022-12-07 14:20:41 -0800
+Processing by ProfilesController#index as */*
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  ↳ app/controllers/profiles_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.25ms)
+Completed 200 OK in 1ms (Views: 0.9ms | ActiveRecord: 0.1ms | Allocations: 1116)
+
+
+Started GET "/profiles" for ::1 at 2022-12-07 14:21:07 -0800
+Processing by ProfilesController#index as */*
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  ↳ app/controllers/profiles_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.44ms)
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.2ms | Allocations: 1116)
+
+
+Started GET "/profiles" for ::1 at 2022-12-07 14:57:35 -0800
+Processing by ProfilesController#index as */*
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/profiles_controller.rb:5:in `index'
+  [1m[36mProfile Load (0.4ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  ↳ app/controllers/profiles_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.12ms)
+Completed 200 OK in 12ms (Views: 11.2ms | ActiveRecord: 2.7ms | Allocations: 1738)
+
+
+Started GET "/profiles" for ::1 at 2022-12-07 14:57:38 -0800
+Processing by ProfilesController#index as */*
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  ↳ app/controllers/profiles_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.8ms)
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.2ms | Allocations: 1095)
+
+
+Started GET "/profiles" for ::1 at 2022-12-07 14:57:51 -0800
+Processing by ProfilesController#index as */*
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  ↳ app/controllers/profiles_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.69ms)
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.2ms | Allocations: 1095)
+
+
+Started GET "/profiles" for ::1 at 2022-12-07 14:58:07 -0800
+Processing by ProfilesController#index as */*
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  ↳ app/controllers/profiles_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.57ms)
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.2ms | Allocations: 1095)
+
+
+Started GET "/profiles" for ::1 at 2022-12-07 14:58:12 -0800
+Processing by ProfilesController#index as */*
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  ↳ app/controllers/profiles_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.69ms)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.2ms | Allocations: 1095)
+
+
+Started GET "/profiles" for ::1 at 2022-12-07 14:58:20 -0800
+Processing by ProfilesController#index as */*
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  ↳ app/controllers/profiles_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.7ms)
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.2ms | Allocations: 1095)
+
+
+Started GET "/profiles" for ::1 at 2022-12-07 14:59:17 -0800
+Processing by ProfilesController#index as */*
+  [1m[36mProfile Load (0.4ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  ↳ app/controllers/profiles_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.57ms)
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.4ms | Allocations: 1096)
+
+
+Started GET "/profiles" for ::1 at 2022-12-07 14:59:28 -0800
+Processing by ProfilesController#index as */*
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  ↳ app/controllers/profiles_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.33ms)
+Completed 200 OK in 1ms (Views: 1.1ms | ActiveRecord: 0.1ms | Allocations: 1095)
+
+
+Started GET "/profiles" for ::1 at 2022-12-07 14:59:34 -0800
+Processing by ProfilesController#index as */*
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  ↳ app/controllers/profiles_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.31ms)
+Completed 200 OK in 1ms (Views: 1.1ms | ActiveRecord: 0.1ms | Allocations: 1095)
+
+
+Started GET "/profiles" for ::1 at 2022-12-07 15:00:30 -0800
+Processing by ProfilesController#index as */*
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  ↳ app/controllers/profiles_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.49ms)
+Completed 200 OK in 5ms (Views: 2.5ms | ActiveRecord: 0.2ms | Allocations: 1095)
+
+
+Started GET "/profiles" for ::1 at 2022-12-07 15:01:26 -0800
+Processing by ProfilesController#index as */*
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  ↳ app/controllers/profiles_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.49ms)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.2ms | Allocations: 1095)
+
+
+Started GET "/profiles" for ::1 at 2022-12-07 15:01:59 -0800
+Processing by ProfilesController#index as */*
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  ↳ app/controllers/profiles_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.23ms)
+Completed 200 OK in 1ms (Views: 0.9ms | ActiveRecord: 0.1ms | Allocations: 1095)
+
+
+Started GET "/profiles" for ::1 at 2022-12-07 15:04:45 -0800
+Processing by ProfilesController#index as */*
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  ↳ app/controllers/profiles_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (4.81ms)
+Completed 200 OK in 8ms (Views: 7.0ms | ActiveRecord: 0.2ms | Allocations: 1095)
+
+
+Started GET "/profiles" for ::1 at 2022-12-07 15:08:29 -0800
+Processing by ProfilesController#index as */*
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  ↳ app/controllers/profiles_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.77ms)
+Completed 200 OK in 7ms (Views: 6.6ms | ActiveRecord: 0.3ms | Allocations: 1095)
+
+
+Started GET "/profiles" for ::1 at 2022-12-07 15:11:36 -0800
+Processing by ProfilesController#index as */*
+  [1m[36mProfile Load (0.8ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  ↳ app/controllers/profiles_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.84ms)
+Completed 200 OK in 5ms (Views: 3.4ms | ActiveRecord: 0.8ms | Allocations: 1095)
+
+
+Started GET "/profiles" for ::1 at 2022-12-07 15:11:51 -0800
+Processing by ProfilesController#index as */*
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  ↳ app/controllers/profiles_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.31ms)
+Completed 200 OK in 1ms (Views: 1.1ms | ActiveRecord: 0.1ms | Allocations: 1095)
+
+
+Started GET "/profiles" for ::1 at 2022-12-07 15:12:00 -0800
+Processing by ProfilesController#index as */*
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  ↳ app/controllers/profiles_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.61ms)
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.2ms | Allocations: 1095)
+
+
+Started GET "/profiles" for ::1 at 2022-12-07 15:12:34 -0800
+Processing by ProfilesController#index as */*
+  [1m[36mProfile Load (0.7ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  ↳ app/controllers/profiles_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (4.01ms)
+Completed 200 OK in 17ms (Views: 14.8ms | ActiveRecord: 0.7ms | Allocations: 1095)
+
+
+Started GET "/profiles" for ::1 at 2022-12-07 15:15:04 -0800
+Processing by ProfilesController#index as */*
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  ↳ app/controllers/profiles_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.59ms)
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.3ms | Allocations: 1095)
+
+
+Started GET "/profiles" for ::1 at 2022-12-07 15:15:06 -0800
+Processing by ProfilesController#index as */*
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  ↳ app/controllers/profiles_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.09ms)
+Completed 200 OK in 4ms (Views: 4.0ms | ActiveRecord: 0.2ms | Allocations: 1095)
+
+
+Started GET "/profiles" for ::1 at 2022-12-07 15:15:07 -0800
+Processing by ProfilesController#index as */*
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  ↳ app/controllers/profiles_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.76ms)
+Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.3ms | Allocations: 1095)
+
+
+Started GET "/profiles" for ::1 at 2022-12-07 15:15:08 -0800
+Processing by ProfilesController#index as */*
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  ↳ app/controllers/profiles_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.35ms)
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.3ms | Allocations: 1095)
+
+
+Started GET "/profiles" for ::1 at 2022-12-07 15:15:09 -0800
+Processing by ProfilesController#index as */*
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  ↳ app/controllers/profiles_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.82ms)
+Completed 200 OK in 3ms (Views: 3.0ms | ActiveRecord: 0.2ms | Allocations: 1095)
+
+
+Started GET "/profiles" for ::1 at 2022-12-07 15:15:30 -0800
+Processing by ProfilesController#index as */*
+  [1m[36mProfile Load (0.7ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  ↳ app/controllers/profiles_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.79ms)
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.7ms | Allocations: 1097)
+
+
+Started GET "/profiles" for ::1 at 2022-12-07 15:15:31 -0800
+Processing by ProfilesController#index as */*
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  ↳ app/controllers/profiles_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.79ms)
+Completed 200 OK in 2ms (Views: 2.2ms | ActiveRecord: 0.1ms | Allocations: 1095)
+
+
+Started GET "/profiles" for ::1 at 2022-12-07 15:15:32 -0800
+Processing by ProfilesController#index as */*
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  ↳ app/controllers/profiles_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.7ms)
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.2ms | Allocations: 1096)
+
+
+Started GET "/profiles" for ::1 at 2022-12-07 15:15:34 -0800
+Processing by ProfilesController#index as */*
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  ↳ app/controllers/profiles_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.71ms)
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.2ms | Allocations: 1095)
+
+
+Started GET "/profiles" for ::1 at 2022-12-07 15:15:35 -0800
+Processing by ProfilesController#index as */*
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  ↳ app/controllers/profiles_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.76ms)
+Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.2ms | Allocations: 1095)
+
+
+Started GET "/profiles" for ::1 at 2022-12-07 15:15:36 -0800
+Processing by ProfilesController#index as */*
+  [1m[36mProfile Load (0.6ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  ↳ app/controllers/profiles_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.18ms)
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.6ms | Allocations: 1095)
+
+
+Started GET "/profiles" for ::1 at 2022-12-07 15:25:21 -0800
+Processing by ProfilesController#index as */*
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/profiles_controller.rb:5:in `index'
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  ↳ app/controllers/profiles_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.81ms)
+Completed 200 OK in 15ms (Views: 14.6ms | ActiveRecord: 2.5ms | Allocations: 1717)
+
+
+Started GET "/profiles" for ::1 at 2022-12-07 15:25:23 -0800
+Processing by ProfilesController#index as */*
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  ↳ app/controllers/profiles_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.41ms)
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.1ms | Allocations: 1095)
+
+
+Started GET "/profiles" for ::1 at 2022-12-07 15:25:40 -0800
+Processing by ProfilesController#index as */*
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  ↳ app/controllers/profiles_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.26ms)
+Completed 200 OK in 1ms (Views: 1.1ms | ActiveRecord: 0.1ms | Allocations: 1095)
+
+
+Started GET "/profiles" for ::1 at 2022-12-07 15:25:43 -0800
+Processing by ProfilesController#index as */*
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  ↳ app/controllers/profiles_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.32ms)
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.1ms | Allocations: 1095)
+
+
+Started GET "/profiles" for ::1 at 2022-12-07 15:25:49 -0800
+Processing by ProfilesController#index as */*
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  ↳ app/controllers/profiles_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.28ms)
+Completed 200 OK in 1ms (Views: 1.1ms | ActiveRecord: 0.1ms | Allocations: 1095)
+
+
+Started GET "/profiles" for ::1 at 2022-12-07 15:26:02 -0800
+Processing by ProfilesController#index as */*
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  ↳ app/controllers/profiles_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.34ms)
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.1ms | Allocations: 1095)
+
+
+Started GET "/profiles" for ::1 at 2022-12-07 15:26:08 -0800
+Processing by ProfilesController#index as */*
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  ↳ app/controllers/profiles_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.3ms)
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.1ms | Allocations: 1095)
+
+
+Started GET "/profiles" for ::1 at 2022-12-07 16:19:01 -0800
+Processing by ProfilesController#index as */*
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/profiles_controller.rb:5:in `index'
+  [1m[36mProfile Load (0.4ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  ↳ app/controllers/profiles_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.18ms)
+Completed 200 OK in 13ms (Views: 12.8ms | ActiveRecord: 2.9ms | Allocations: 1717)
+
+
+Started GET "/profiles" for ::1 at 2022-12-07 16:23:37 -0800
+Processing by ProfilesController#index as */*
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  ↳ app/controllers/profiles_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.83ms)
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.2ms | Allocations: 1095)
+
+
+Started GET "/profiles" for ::1 at 2022-12-07 16:23:40 -0800
+Processing by ProfilesController#index as */*
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  ↳ app/controllers/profiles_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.03ms)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.2ms | Allocations: 1095)
+
+
+Started GET "/profiles" for ::1 at 2022-12-07 16:23:41 -0800
+Processing by ProfilesController#index as */*
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  ↳ app/controllers/profiles_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.64ms)
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.2ms | Allocations: 1095)
+
+
+Started GET "/profiles" for ::1 at 2022-12-07 16:23:43 -0800
+Processing by ProfilesController#index as */*
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  ↳ app/controllers/profiles_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.18ms)
+Completed 200 OK in 4ms (Views: 3.9ms | ActiveRecord: 0.3ms | Allocations: 1095)
+
+
+Started GET "/profiles" for ::1 at 2022-12-07 16:23:44 -0800
+Processing by ProfilesController#index as */*
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  ↳ app/controllers/profiles_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.78ms)
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.1ms | Allocations: 1095)
+
+
+Started GET "/profiles" for ::1 at 2022-12-07 16:24:45 -0800
+Processing by ProfilesController#index as */*
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  ↳ app/controllers/profiles_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.53ms)
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.2ms | Allocations: 1095)
+
+
+Started GET "/profiles" for ::1 at 2022-12-07 16:25:00 -0800
+Processing by ProfilesController#index as */*
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  ↳ app/controllers/profiles_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.52ms)
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.1ms | Allocations: 1095)
+
+
+Started GET "/gifts" for ::1 at 2022-12-08 20:23:37 -0800
+Started GET "/profiles" for ::1 at 2022-12-08 20:23:37 -0800
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by GiftsController#index as */*
+Processing by ProfilesController#index as */*
+  [1m[36mGift Load (0.2ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts"[0m
+  ↳ app/controllers/gifts_controller.rb:4:in `index'
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/profiles_controller.rb:5:in `index'
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  ↳ app/controllers/profiles_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.32ms)
+Completed 200 OK in 26ms (Views: 11.4ms | ActiveRecord: 0.4ms | Allocations: 20389)
+
+
+[active_model_serializers]   [1m[36mRate Load (0.1ms)[0m  [1m[34mSELECT "rates".* FROM "rates" WHERE "rates"."gift_id" = ?[0m  [["gift_id", 1]]
+[active_model_serializers]   ↳ app/controllers/gifts_controller.rb:4:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (16.83ms)
+Completed 500 Internal Server Error in 42ms (ActiveRecord: 0.8ms | Allocations: 32189)
+
+
+  
+NoMethodError (undefined method `details' for #<Gift:0x0000000110bbcc70>):
+  
+app/controllers/gifts_controller.rb:4:in `index'
+Started GET "/gifts" for ::1 at 2022-12-08 20:23:43 -0800
+Started GET "/profiles" for ::1 at 2022-12-08 20:23:43 -0800
+Processing by ProfilesController#index as */*
+Processing by GiftsController#index as */*
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts"[0m
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  ↳ app/controllers/profiles_controller.rb:5:in `index'
+  ↳ app/controllers/gifts_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mRate Load (0.3ms)[0m  [1m[34mSELECT "rates".* FROM "rates" WHERE "rates"."gift_id" = ?[0m  [["gift_id", 1]]
+[active_model_serializers]   ↳ app/controllers/gifts_controller.rb:4:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (9.1ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (8.46ms)
+Completed 200 OK in 25ms (Views: 23.8ms | ActiveRecord: 0.3ms | Allocations: 5950)
+
+
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 0.6ms | Allocations: 5807)
+
+
+  
+NoMethodError (undefined method `details' for #<Gift:0x0000000114155260>):
+  
+app/controllers/gifts_controller.rb:4:in `index'
+Started GET "/profiles" for ::1 at 2022-12-08 20:23:46 -0800
+Processing by ProfilesController#index as */*
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+Started GET "/gifts" for ::1 at 2022-12-08 20:23:46 -0800
+Processing by GiftsController#index as */*
+  [1m[36mGift Load (0.2ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts"[0m
+  ↳ app/controllers/gifts_controller.rb:4:in `index'
+  ↳ app/controllers/profiles_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.69ms)
+Completed 200 OK in 8ms (Views: 7.6ms | ActiveRecord: 0.2ms | Allocations: 2078)
+
+
+[active_model_serializers]   [1m[36mRate Load (0.2ms)[0m  [1m[34mSELECT "rates".* FROM "rates" WHERE "rates"."gift_id" = ?[0m  [["gift_id", 1]]
+[active_model_serializers]   ↳ app/controllers/gifts_controller.rb:4:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (15.71ms)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.4ms | Allocations: 5663)
+
+
+  
+NoMethodError (undefined method `details' for #<Gift:0x00000001108a85e8>):
+  
+app/controllers/gifts_controller.rb:4:in `index'
+Started GET "/gifts" for ::1 at 2022-12-08 20:23:47 -0800
+Started GET "/profiles" for ::1 at 2022-12-08 20:23:47 -0800
+Processing by GiftsController#index as */*
+  [1m[36mGift Load (0.2ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts"[0m
+  ↳ app/controllers/gifts_controller.rb:4:in `index'
+Processing by ProfilesController#index as */*
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+[active_model_serializers]   [1m[36mRate Load (0.2ms)[0m  [1m[34mSELECT "rates".* FROM "rates" WHERE "rates"."gift_id" = ?[0m  [["gift_id", 1]]
+[active_model_serializers]   ↳ app/controllers/gifts_controller.rb:4:in `index'
+  ↳ app/controllers/profiles_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.88ms)
+Completed 200 OK in 7ms (Views: 6.1ms | ActiveRecord: 0.3ms | Allocations: 2138)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (16.85ms)
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 0.4ms | Allocations: 6135)
+
+
+  
+NoMethodError (undefined method `details' for #<Gift:0x0000000110a45ce8>):
+  
+app/controllers/gifts_controller.rb:4:in `index'
+Started GET "/profiles" for ::1 at 2022-12-08 20:23:48 -0800
+Started GET "/gifts" for ::1 at 2022-12-08 20:23:48 -0800
+Processing by GiftsController#index as */*
+  [1m[36mGift Load (0.4ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts"[0m
+  ↳ app/controllers/gifts_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mRate Load (0.2ms)[0m  [1m[34mSELECT "rates".* FROM "rates" WHERE "rates"."gift_id" = ?[0m  [["gift_id", 1]]
+Processing by ProfilesController#index as */*
+[active_model_serializers]   ↳ app/controllers/gifts_controller.rb:4:in `index'
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  ↳ app/controllers/profiles_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (16.08ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.91ms)
+Completed 200 OK in 17ms (Views: 16.3ms | ActiveRecord: 0.2ms | Allocations: 4165)
+
+
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 0.5ms | Allocations: 6142)
+
+
+  
+NoMethodError (undefined method `details' for #<Gift:0x00000001141287d8>):
+  
+app/controllers/gifts_controller.rb:4:in `index'

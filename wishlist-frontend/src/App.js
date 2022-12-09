@@ -3,6 +3,8 @@ import {Routes, Route} from "react-router-dom";
 import RenderHomePage from "./components/HomePage";
 import RenderLoginPage from "./components/LoginPage";
 import './App.css';
+import NavBar from './NavBar'
+import GiftContainer from './components/GiftContainer'
 
 function App() {
   const [profile, setProfile] = useState({})
@@ -12,17 +14,22 @@ function App() {
   const [profimg, setProfimg] = useState('')
   const [profiles, setProfiles] = useState([])
   const [loggedin, setLoggedin] = useState(false)
-
+const [gift, setAllGifts] = useState([]);
   useEffect(() => {
     fetch("http://localhost:3000/profiles")
       .then(r => r.json())
       .then(setProfiles)
   }, [])
 
-
+  useEffect(() => {
+    fetch("http://localhost:3000/gifts")
+      .then((res) => res.json())
+      .then((data) => setAllGifts(data));
+  }, []);
 
   return (
     <div className="App">
+      <NavBar/>
       <Routes>
         <Route exact path = "/"
         element={<RenderHomePage />}
@@ -48,7 +55,6 @@ function App() {
         />
 
       </Routes>
-
     </div>
   );
 }
