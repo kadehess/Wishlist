@@ -1,19 +1,26 @@
 import React, {useState, useEffect} from "react";
 
-function CreateLoginCard({setProfile, setUsername, username, setPassword, password, handleUsername, handlePassword, loggedin, setLoggedin, profiles}){
+function CreateLoginCard({setProfile, profile, setUsername, username, setPassword, password, handleUsername, handlePassword, loggedin, setLoggedin, profiles}){
     console.log(profiles)
     function handleSubmit(e){
         e.preventDefault()
-        profiles.map(profile => {
-            if (profile.username == username){
-                if (profile.passcode == password){
-                    setProfile(profile)
-                    setUsername('')
-                    setPassword('')
+        fetch("http://localhost:3000/login", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ username: username,
+            password: password }),
+          })
+            .then((res) => {
+                if(res.ok){
+                    res.json().then(setProfile)
+                    
                     setLoggedin(true)
-                }
-            }
-        })
+                }})
+                
+    
+            
     }
 
     return(

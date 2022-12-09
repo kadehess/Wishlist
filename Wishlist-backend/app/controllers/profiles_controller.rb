@@ -1,17 +1,21 @@
 class ProfilesController < ApplicationController
+    skip_before_action :authorized, only: [:create, :show, :destroy]
     rescue_from ActiveRecord::RecordNotFound, with: :record_not_found_response
     rescue_from ActiveRecord::RecordInvalid, with: :render_record_invalid
+    wrap_parameters format: []
+
     def index
         render json: Profile.all
     end
 
     def show 
-        profile = Profile.find(params[:id])
-        render json: profile, serializer: ProfileWithWishlistSerializer 
+        current_profile = Profile.find(id: session[:profile_id])
+        render json: current_profile
     end
 
     def create
         profile = Profile.create!(profile_params)
+        
         render json: profile, status: :created
 
     end
@@ -31,11 +35,11 @@ class ProfilesController < ApplicationController
     private
 
     def update_params
-        params.permit(:passcode)
+        params.permit(:password)
     end
 
     def profile_params 
-        params.permit(:name, :username, :passcode, :image)
+        params.permit(:name, :username, :password, :image)
     end
 
     def render_record_invalid(exception)

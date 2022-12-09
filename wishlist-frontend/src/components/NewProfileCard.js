@@ -7,7 +7,7 @@ function CreateProfileCard({name, setName, username, setUsername, setPassword, p
             name: name,
             image: profimg,
             username: username,
-            passcode: password
+            password: password
         }
         fetch("http://localhost:3000/profiles", {
             method:"POST",
@@ -17,7 +17,7 @@ function CreateProfileCard({name, setName, username, setUsername, setPassword, p
             body: JSON.stringify(newProfile),
           })
           .then((r) => r.json())
-          .then(setProfiles([...profiles, newProfile]))
+          //.then(setProfiles([...profiles, newProfile]))
           setName('')
           setUsername('')
           setProfimg('')

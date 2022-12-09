@@ -7,9 +7,9 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 puts "Creating Profiles..."
-joe = Profile.create(name: 'Joe', username: 'joe123', passcode: 'pass123',image: 'https://play-lh.googleusercontent.com/VC7rta8PIK3MqmQG5c-F5CNJQ6cCv6Eb-kyBoUcQ2xj83dZVhn7YCj_GIWW8y7TnAMjU=w600-h300-pc0xffffff-pd' )
-sam = Profile.create(name: 'Sam', username: 'sam123', passcode: 'pass123', image: 'https://play-lh.googleusercontent.com/VC7rta8PIK3MqmQG5c-F5CNJQ6cCv6Eb-kyBoUcQ2xj83dZVhn7YCj_GIWW8y7TnAMjU=w600-h300-pc0xffffff-pd' )
-kate = Profile.create(name: 'Kate', username: 'kate123', passcode: 'pass123', image: 'https://play-lh.googleusercontent.com/VC7rta8PIK3MqmQG5c-F5CNJQ6cCv6Eb-kyBoUcQ2xj83dZVhn7YCj_GIWW8y7TnAMjU=w600-h300-pc0xffffff-pd' )
+joe = Profile.create(name: 'Joe', username: 'joe123', password_digest: 'pass123',image: 'https://play-lh.googleusercontent.com/VC7rta8PIK3MqmQG5c-F5CNJQ6cCv6Eb-kyBoUcQ2xj83dZVhn7YCj_GIWW8y7TnAMjU=w600-h300-pc0xffffff-pd' )
+sam = Profile.create(name: 'Sam', username: 'sam123', password_digest: 'pass123', image: 'https://play-lh.googleusercontent.com/VC7rta8PIK3MqmQG5c-F5CNJQ6cCv6Eb-kyBoUcQ2xj83dZVhn7YCj_GIWW8y7TnAMjU=w600-h300-pc0xffffff-pd' )
+kate = Profile.create(name: 'Kate', username: 'kate123', password_digest: 'pass123', image: 'https://play-lh.googleusercontent.com/VC7rta8PIK3MqmQG5c-F5CNJQ6cCv6Eb-kyBoUcQ2xj83dZVhn7YCj_GIWW8y7TnAMjU=w600-h300-pc0xffffff-pd' )
 
 puts "Creating Gifts..."
 iphone = Gift.create(name: 'Iphone', price: 700, image: 'https://www.apple.com/v/iphone-14/c/images/overview/selfies/selfie_startframe__ex2suisayck2_large.jpg')

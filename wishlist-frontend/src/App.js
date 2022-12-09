@@ -13,11 +13,30 @@ function App() {
   const [profiles, setProfiles] = useState([])
   const [loggedin, setLoggedin] = useState(false)
 
-  useEffect(() => {
-    fetch("http://localhost:3000/profiles")
-      .then(r => r.json())
-      .then(setProfiles)
-  }, [])
+  // useEffect(() => {
+  //   fetch("http://localhost:3000/profiles")
+  //     .then(r => r.json())
+  //     .then(setProfiles)
+  // }, [])
+
+  useEffect(() => { 
+    fetch("http://localhost:3000/auth")
+    .then(res => {
+      if(res.ok){
+        res.json().then(prof => setProfile(prof))
+        setLoggedin(true)
+      }
+    })
+  },[])
+  function logOut(){
+    fetch("http://localhost:3000/logout", {
+      method:"DELETE",
+    }).then(() => {setLoggedin(false)
+      setProfile({})}
+    )
+    
+      
+}
 
 
 
@@ -41,6 +60,7 @@ function App() {
         profiles={profiles}
         setLoggedin={setLoggedin}
         loggedin={loggedin}
+        logout={logOut}
         name={name}
         setName={setName}/>}/>
 
