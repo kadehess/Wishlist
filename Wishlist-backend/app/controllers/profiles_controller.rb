@@ -1,5 +1,5 @@
 class ProfilesController < ApplicationController
-    skip_before_action :authorized, only: [:create, :show, :destroy]
+    skip_before_action :authorized, only: [:create, :show, :destroy, :index]
     rescue_from ActiveRecord::RecordNotFound, with: :record_not_found_response
     rescue_from ActiveRecord::RecordInvalid, with: :render_record_invalid
     wrap_parameters format: []

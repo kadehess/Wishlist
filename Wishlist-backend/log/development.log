@@ -22168,3 +22168,290 @@ Processing by SessionsController#destroy as */*
 Completed 204 No Content in 0ms (ActiveRecord: 0.0ms | Allocations: 96)
 
 
+Started GET "/auth" for ::1 at 2022-12-08 20:42:32 -0700
+Processing by ProfilesController#show as */*
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/profiles_controller.rb:12:in `show'
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:12:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Completed 404 Not Found in 8ms (Views: 0.6ms | ActiveRecord: 0.5ms | Allocations: 1310)
+
+
+Started GET "/auth" for ::1 at 2022-12-08 20:42:42 -0700
+Processing by ProfilesController#show as */*
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:12:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Completed 404 Not Found in 5ms (Views: 0.6ms | ActiveRecord: 0.1ms | Allocations: 770)
+
+
+Started GET "/profiles" for ::1 at 2022-12-08 20:42:56 -0700
+Processing by ProfilesController#index as HTML
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `authorized'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.06ms)
+Filter chain halted as :authorized rendered or redirected
+Completed 401 Unauthorized in 4ms (Views: 0.5ms | ActiveRecord: 0.1ms | Allocations: 792)
+
+
+Started GET "/profiles" for ::1 at 2022-12-08 20:42:57 -0700
+Processing by ProfilesController#index as HTML
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `authorized'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.06ms)
+Filter chain halted as :authorized rendered or redirected
+Completed 401 Unauthorized in 4ms (Views: 0.4ms | ActiveRecord: 0.1ms | Allocations: 752)
+
+
+Started GET "/profiles" for ::1 at 2022-12-08 20:42:57 -0700
+Processing by ProfilesController#index as HTML
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `authorized'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.05ms)
+Filter chain halted as :authorized rendered or redirected
+Completed 401 Unauthorized in 3ms (Views: 0.4ms | ActiveRecord: 0.1ms | Allocations: 753)
+
+
+Started GET "/profiles" for ::1 at 2022-12-08 20:42:57 -0700
+Processing by ProfilesController#index as HTML
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `authorized'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Filter chain halted as :authorized rendered or redirected
+Completed 401 Unauthorized in 3ms (Views: 0.4ms | ActiveRecord: 0.1ms | Allocations: 752)
+
+
+Started GET "/profiles" for ::1 at 2022-12-08 20:42:57 -0700
+Processing by ProfilesController#index as HTML
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `authorized'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.06ms)
+Filter chain halted as :authorized rendered or redirected
+Completed 401 Unauthorized in 3ms (Views: 0.4ms | ActiveRecord: 0.1ms | Allocations: 752)
+
+
+Started GET "/profiles" for ::1 at 2022-12-08 20:42:58 -0700
+Processing by ProfilesController#index as HTML
+  [1m[36mProfile Load (2.4ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `authorized'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.05ms)
+Filter chain halted as :authorized rendered or redirected
+Completed 401 Unauthorized in 5ms (Views: 1.6ms | ActiveRecord: 2.4ms | Allocations: 752)
+
+
+Started GET "/profiles" for ::1 at 2022-12-08 20:42:58 -0700
+Processing by ProfilesController#index as HTML
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `authorized'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.05ms)
+Filter chain halted as :authorized rendered or redirected
+Completed 401 Unauthorized in 2ms (Views: 0.4ms | ActiveRecord: 0.1ms | Allocations: 753)
+
+
+Started GET "/gifts/1" for ::1 at 2022-12-08 20:44:01 -0700
+Processing by GiftsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/gifts_controller.rb:10:in `show'
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/gifts_controller.rb:10:in `show'
+[active_model_serializers]   [1m[36mGift Load (0.2ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" INNER JOIN "wishlists" ON "gifts"."id" = "wishlists"."gift_id" WHERE "wishlists"."profile_id" = ?[0m  [["profile_id", 1]]
+[active_model_serializers]   ↳ app/controllers/gifts_controller.rb:11:in `show'
+[active_model_serializers] Rendered ProfileWithWishlistSerializer with ActiveModelSerializers::Adapter::Attributes (21.02ms)
+Completed 200 OK in 34ms (Views: 21.0ms | ActiveRecord: 1.3ms | Allocations: 20382)
+
+
+Started GET "/gifts/2" for ::1 at 2022-12-08 20:44:11 -0700
+Processing by GiftsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/gifts_controller.rb:10:in `show'
+[active_model_serializers]   [1m[36mGift Load (0.1ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" INNER JOIN "wishlists" ON "gifts"."id" = "wishlists"."gift_id" WHERE "wishlists"."profile_id" = ?[0m  [["profile_id", 2]]
+[active_model_serializers]   ↳ app/controllers/gifts_controller.rb:11:in `show'
+[active_model_serializers] Rendered ProfileWithWishlistSerializer with ActiveModelSerializers::Adapter::Attributes (2.44ms)
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 0.2ms | Allocations: 1662)
+
+
+Started GET "/gifts/7" for ::1 at 2022-12-08 20:44:17 -0700
+Processing by GiftsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/gifts_controller.rb:10:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.06ms)
+Completed 404 Not Found in 2ms (Views: 0.6ms | ActiveRecord: 0.1ms | Allocations: 678)
+
+
+Started GET "/gifts/6" for ::1 at 2022-12-08 20:44:21 -0700
+Processing by GiftsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/gifts_controller.rb:10:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.12ms)
+Completed 404 Not Found in 2ms (Views: 0.6ms | ActiveRecord: 0.1ms | Allocations: 562)
+
+
+Started GET "/gifts/4" for ::1 at 2022-12-08 20:44:25 -0700
+Processing by GiftsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/gifts_controller.rb:10:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Completed 404 Not Found in 2ms (Views: 0.5ms | ActiveRecord: 0.1ms | Allocations: 563)
+
+
+Started GET "/gifts/3" for ::1 at 2022-12-08 20:44:29 -0700
+Processing by GiftsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/gifts_controller.rb:10:in `show'
+[active_model_serializers]   [1m[36mGift Load (0.2ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" INNER JOIN "wishlists" ON "gifts"."id" = "wishlists"."gift_id" WHERE "wishlists"."profile_id" = ?[0m  [["profile_id", 3]]
+[active_model_serializers]   ↳ app/controllers/gifts_controller.rb:11:in `show'
+[active_model_serializers] Rendered ProfileWithWishlistSerializer with ActiveModelSerializers::Adapter::Attributes (2.65ms)
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.3ms | Allocations: 1659)
+
+
+Started POST "/login" for ::1 at 2022-12-08 20:44:39 -0700
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"joe", "password"=>"[FILTERED]", "session"=>{"username"=>"joe", "password"=>"[FILTERED]"}}
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."username" = ? LIMIT ?[0m  [["username", "joe"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+[active_model_serializers] Rendered ProfileSerializer with ActiveModelSerializers::Adapter::Attributes (0.23ms)
+Completed 200 OK in 180ms (Views: 1.1ms | ActiveRecord: 0.2ms | Allocations: 1116)
+
+
+Started GET "/profiles/1" for ::1 at 2022-12-08 20:44:50 -0700
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:12:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Completed 404 Not Found in 3ms (Views: 0.7ms | ActiveRecord: 0.1ms | Allocations: 792)
+
+
+Started GET "/profiles" for ::1 at 2022-12-08 20:44:55 -0700
+Processing by ProfilesController#index as HTML
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `authorized'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.06ms)
+Filter chain halted as :authorized rendered or redirected
+Completed 401 Unauthorized in 3ms (Views: 0.5ms | ActiveRecord: 0.2ms | Allocations: 785)
+
+
+Started GET "/profiles" for ::1 at 2022-12-08 20:45:10 -0700
+Processing by ProfilesController#index as HTML
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/profiles_controller.rb:8:in `index'
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  ↳ app/controllers/profiles_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.52ms)
+Completed 200 OK in 11ms (Views: 8.0ms | ActiveRecord: 0.9ms | Allocations: 7449)
+
+
+Started GET "/profiles" for ::1 at 2022-12-08 20:45:22 -0700
+Processing by ProfilesController#index as HTML
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  ↳ app/controllers/profiles_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.51ms)
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.1ms | Allocations: 1253)
+
+
+Started GET "/gifts/8" for ::1 at 2022-12-08 20:45:30 -0700
+Processing by GiftsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/gifts_controller.rb:10:in `show'
+[active_model_serializers]   [1m[36mGift Load (0.1ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" INNER JOIN "wishlists" ON "gifts"."id" = "wishlists"."gift_id" WHERE "wishlists"."profile_id" = ?[0m  [["profile_id", 8]]
+[active_model_serializers]   ↳ app/controllers/gifts_controller.rb:11:in `show'
+[active_model_serializers] Rendered ProfileWithWishlistSerializer with ActiveModelSerializers::Adapter::Attributes (7.7ms)
+Completed 200 OK in 11ms (Views: 7.6ms | ActiveRecord: 0.7ms | Allocations: 6036)
+
+
+Started GET "/profiles" for ::1 at 2022-12-08 20:45:37 -0700
+Processing by ProfilesController#index as HTML
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  ↳ app/controllers/profiles_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.59ms)
+Completed 200 OK in 2ms (Views: 2.0ms | ActiveRecord: 0.1ms | Allocations: 1231)
+
+
+Started DELETE "/logout" for ::1 at 2022-12-08 20:45:46 -0700
+Processing by SessionsController#destroy as */*
+Completed 204 No Content in 0ms (ActiveRecord: 0.0ms | Allocations: 102)
+
+
+Started POST "/login" for ::1 at 2022-12-08 21:49:30 -0700
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"joe", "password"=>"[FILTERED]", "session"=>{"username"=>"joe", "password"=>"[FILTERED]"}}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."username" = ? LIMIT ?[0m  [["username", "joe"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+[active_model_serializers] Rendered ProfileSerializer with ActiveModelSerializers::Adapter::Attributes (0.32ms)
+Completed 200 OK in 185ms (Views: 1.3ms | ActiveRecord: 0.7ms | Allocations: 1333)
+
+
+Started DELETE "/logout" for ::1 at 2022-12-08 21:50:18 -0700
+Processing by SessionsController#destroy as */*
+Completed 204 No Content in 0ms (ActiveRecord: 0.0ms | Allocations: 96)
+
+
+Started GET "/gifts" for ::1 at 2022-12-08 21:51:31 -0700
+Processing by GiftsController#index as HTML
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `authorized'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Filter chain halted as :authorized rendered or redirected
+Completed 401 Unauthorized in 3ms (Views: 0.6ms | ActiveRecord: 0.2ms | Allocations: 895)
+
+
+Started GET "/gifts" for ::1 at 2022-12-08 21:51:46 -0700
+Processing by GiftsController#index as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/gifts_controller.rb:6:in `index'
+  [1m[36mGift Load (0.1ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts"[0m
+  ↳ app/controllers/gifts_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mRate Load (0.1ms)[0m  [1m[34mSELECT "rates".* FROM "rates" WHERE "rates"."gift_id" = ?[0m  [["gift_id", 1]]
+[active_model_serializers]   ↳ app/controllers/gifts_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (15.28ms)
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 1.4ms | Allocations: 15199)
+
+
+  
+NoMethodError (undefined method `details' for #<Gift:0x00007f73bc2a5b20>):
+  
+app/controllers/gifts_controller.rb:6:in `index'
+Started GET "/gifts" for ::1 at 2022-12-08 21:52:40 -0700
+Processing by GiftsController#index as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/gifts_controller.rb:6:in `index'
+  [1m[36mGift Load (0.1ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts"[0m
+  ↳ app/controllers/gifts_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mRate Load (0.1ms)[0m  [1m[34mSELECT "rates".* FROM "rates" WHERE "rates"."gift_id" = ?[0m  [["gift_id", 1]]
+[active_model_serializers]   ↳ app/controllers/gifts_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mGiftDetail Load (0.1ms)[0m  [1m[34mSELECT "gift_details".* FROM "gift_details" WHERE "gift_details"."gift_id" = ?[0m  [["gift_id", 1]]
+[active_model_serializers]   ↳ app/controllers/gifts_controller.rb:6:in `index'
+[active_model_serializers] No serializer found for resource: #<GiftDetail id: 1, detail: "Iphone 14", gift_id: 1, created_at: "2022-12-08 19:05:33.215282000 +0000", updated_at: "2022-12-08 19:05:33.215282000 +0000">
+[active_model_serializers]   [1m[36mRate Load (0.1ms)[0m  [1m[34mSELECT "rates".* FROM "rates" WHERE "rates"."gift_id" = ?[0m  [["gift_id", 2]]
+[active_model_serializers]   ↳ app/controllers/gifts_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mGiftDetail Load (0.1ms)[0m  [1m[34mSELECT "gift_details".* FROM "gift_details" WHERE "gift_details"."gift_id" = ?[0m  [["gift_id", 2]]
+[active_model_serializers]   ↳ app/controllers/gifts_controller.rb:6:in `index'
+[active_model_serializers] No serializer found for resource: #<GiftDetail id: 4, detail: "Walmart Gift Card", gift_id: 2, created_at: "2022-12-08 19:05:33.235557000 +0000", updated_at: "2022-12-08 19:05:33.235557000 +0000">
+[active_model_serializers]   [1m[36mRate Load (0.1ms)[0m  [1m[34mSELECT "rates".* FROM "rates" WHERE "rates"."gift_id" = ?[0m  [["gift_id", 3]]
+[active_model_serializers]   ↳ app/controllers/gifts_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mGiftDetail Load (0.1ms)[0m  [1m[34mSELECT "gift_details".* FROM "gift_details" WHERE "gift_details"."gift_id" = ?[0m  [["gift_id", 3]]
+[active_model_serializers]   ↳ app/controllers/gifts_controller.rb:6:in `index'
+[active_model_serializers] No serializer found for resource: #<GiftDetail id: 6, detail: "Size 10", gift_id: 3, created_at: "2022-12-08 19:05:33.254147000 +0000", updated_at: "2022-12-08 19:05:33.254147000 +0000">
+[active_model_serializers]   [1m[36mRate Load (0.1ms)[0m  [1m[34mSELECT "rates".* FROM "rates" WHERE "rates"."gift_id" = ?[0m  [["gift_id", 4]]
+[active_model_serializers]   ↳ app/controllers/gifts_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mGiftDetail Load (0.1ms)[0m  [1m[34mSELECT "gift_details".* FROM "gift_details" WHERE "gift_details"."gift_id" = ?[0m  [["gift_id", 4]]
+[active_model_serializers]   ↳ app/controllers/gifts_controller.rb:6:in `index'
+[active_model_serializers] No serializer found for resource: #<GiftDetail id: 9, detail: "Toy", gift_id: 4, created_at: "2022-12-08 19:05:33.273118000 +0000", updated_at: "2022-12-08 19:05:33.273118000 +0000">
+[active_model_serializers] No serializer found for resource: #<GiftDetail id: 1, detail: "Iphone 14", gift_id: 1, created_at: "2022-12-08 19:05:33.215282000 +0000", updated_at: "2022-12-08 19:05:33.215282000 +0000">
+[active_model_serializers] No serializer found for resource: #<GiftDetail id: 4, detail: "Walmart Gift Card", gift_id: 2, created_at: "2022-12-08 19:05:33.235557000 +0000", updated_at: "2022-12-08 19:05:33.235557000 +0000">
+[active_model_serializers] No serializer found for resource: #<GiftDetail id: 6, detail: "Size 10", gift_id: 3, created_at: "2022-12-08 19:05:33.254147000 +0000", updated_at: "2022-12-08 19:05:33.254147000 +0000">
+[active_model_serializers] No serializer found for resource: #<GiftDetail id: 9, detail: "Toy", gift_id: 4, created_at: "2022-12-08 19:05:33.273118000 +0000", updated_at: "2022-12-08 19:05:33.273118000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (34.54ms)
+Completed 200 OK in 47ms (Views: 43.3ms | ActiveRecord: 3.0ms | Allocations: 24053)
+
+

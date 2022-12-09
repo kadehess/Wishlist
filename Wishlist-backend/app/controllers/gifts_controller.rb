@@ -1,4 +1,5 @@
 class GiftsController < ApplicationController
+    skip_before_action :authorized, only: [:show, :index]
     rescue_from ActiveRecord::RecordNotFound, with: :record_not_found_response
     def index
         gift = Gift.all
