@@ -32,7 +32,8 @@ const [gift, setAllGifts] = useState([]);
       <NavBar/>
       <Routes>
         <Route exact path = "/"
-        element={<RenderHomePage />}
+        element={<RenderHomePage 
+        />}
         />
         <Route exact path = "/login"
         element={<RenderLoginPage
